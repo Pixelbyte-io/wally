@@ -10,7 +10,7 @@ use crate::manifest::MANIFEST_FILE_NAME;
 const DEFAULT_MANIFEST: &str = r#"[package]
 name = "placeholder/placeholder"
 version = "0.1.0"
-registry = "https://github.com/UpliftGames/wally-index"
+registry = "https://github.com/Pixelbyte-io/wally-index"
 realm = "shared"
 
 [dependencies]
@@ -61,7 +61,7 @@ impl InitSubcommand {
             .parse::<Document>()
             .expect("Built-in default manifest was invalid TOML");
 
-        let full_name = format!("{}/{}", whoami::username(), package_name).to_lowercase();
+        let full_name = format!("{}/{}", "global", package_name).to_lowercase();
         doc["package"]["name"] = value(full_name.clone());
 
         fs_err::write(manifest_path, doc.to_string())?;
