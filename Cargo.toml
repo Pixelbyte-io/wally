@@ -4,7 +4,7 @@ description = "Package manager for Roblox (modified)"
 edition = "2018"
 license = "MPL-2.0"
 name = "wally"
-version = "0.1.0"
+version = "0.3.1-0.1"
 
 [workspace]
 members = [
